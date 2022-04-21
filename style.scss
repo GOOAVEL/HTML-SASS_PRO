@@ -1,0 +1,239 @@
+%catRadiUS {
+    //my style 
+    border-radius: 3px;
+}
+
+$MainColor: #222224;
+$MainPink :#F16D7F;
+
+@mixin font {
+    font-family: Lato, sans-serif;
+}
+
+body {
+    outline: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.nav__main {
+    height: 75px;
+    background-color: $MainColor;
+
+    &__box {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__left {
+            display: flex;
+
+            &>li {
+                margin-right: 41px;
+                display: flex;
+                align-items: flex-end;
+            }
+        }
+
+        &__right {
+            display: flex;
+
+            &>li {
+                margin-left: 33px;
+                display: flex;
+                align-items: flex-end;
+            }
+        }
+
+    }
+}
+
+.nav__menu {
+    position: relative;
+    bottom: -14px;
+    padding-bottom: 14px;
+
+    &:hover {
+        .nav__menu__burg {
+            display: block;
+        }
+    }
+
+    &__burg {
+        @extend %catRadiUS;
+        display: none;
+        width: 232px;
+        position: absolute;
+        top: 38px;
+        left: -52px;
+        padding: (35px - 12px) 34px;
+        box-sizing: border-box;
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+
+        &::before {
+            content: "";
+            display: block;
+            background: white;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -5px;
+            left: 63px;
+            transform: rotate(45deg);
+        }
+
+        &>a {
+            float: right;
+        }
+    }
+}
+
+%option-burg-text {
+    @include font;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.burg_mh {
+    clear: both;
+    margin-bottom: 24px;
+    font-weight: 700;
+    @extend %option-burg-text;
+}
+
+.burg_h {
+    margin-bottom: 12px;
+    font-weight: 400;
+    color: $MainPink;
+    @extend %option-burg-text;
+}
+
+.burg__li {
+
+    &>li {
+        margin-bottom: 11px;
+        padding-left: 20px;
+
+        &>a {
+            font-weight: 400;
+            color: #6F6E6E;
+            @extend %option-burg-text;
+            text-decoration: none;
+
+            &:hover {
+                border-radius: 10px;
+                color: $MainPink;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+.banner {
+    height: 764px;
+    background-color: #F1E4E6;
+
+    &__box {
+        display: flex;
+        justify-content: space-between;
+
+        &>img {
+            margin-right: 20px; //Адаптивное прижатие (отступ)
+        }
+
+        &__slogan {
+            height: 92px;
+            margin-top: 290px;
+            margin-right: 100px;
+            display: flex;
+            align-items: center;
+
+            &-elem {
+                margin-right: 16px;
+                width: 12px;
+                height: 100%;
+                background-color: #F16D7F;
+            }
+
+            &_text {
+                width: 377px;
+                @include font;
+                color: #222222;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+.THE-BRAND {
+    font-weight: 900;
+    font-size: 46px;
+    line-height: 58px;
+}
+
+.OF-LUXERIOUS-FASHION {
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.FASHION {
+    color: $MainPink;
+}
+
+.offers {
+    margin: 65px auto (96px - 30px);
+    display: flex;
+    flex-wrap: wrap;
+
+    &__block {
+        @extend %catRadiUS;
+        position: relative;
+        margin-right: 30px;
+        flex: 1 1 25%;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+
+        &:last-child,
+        &:nth-child(3) {
+            margin-right: 0px
+        }
+
+        &>img {
+            width: 100%;
+            @extend %catRadiUS;
+            opacity: 0.5;
+        }
+
+        &_row {
+            position: absolute;
+            @include font;
+            text-decoration: none;
+            line-height: 19px;
+            text-align: center;
+
+            &_text {
+                font-weight: 400;
+                font-size: 16px;
+                color: #FFFFFF;
+            }
+
+            &_h {
+                font-weight: 900;
+                font-size: 24px;
+                color: $MainPink;
+            }
+        }
+    }
+}
