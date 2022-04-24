@@ -3,7 +3,7 @@
     border-radius: 3px;
 }
 
-@mixin font {
+%font {
     font-family: Lato, sans-serif;
 }
 
@@ -102,7 +102,7 @@ $TextWhite: #FBFBFB;
 }
 
 %option-burg-text {
-    @include font;
+    @extend %font;
     font-size: 14px;
     line-height: 17px;
 }
@@ -175,7 +175,7 @@ $TextWhite: #FBFBFB;
 
             &_text {
                 width: 377px;
-                @include font;
+                @extend %font;
                 color: #222222;
                 line-height: 38px;
             }
@@ -225,7 +225,7 @@ $TextWhite: #FBFBFB;
 
         &_row {
             position: absolute;
-            @include font;
+            @extend %font;
             text-decoration: none;
             text-align: center;
 
@@ -246,10 +246,106 @@ $TextWhite: #FBFBFB;
     }
 }
 
-.description {
+.products {
+    &__description {
+        @extend %font;
+        text-align: center;
+        font-weight: 400;
+
+        &__h {
+            margin-bottom: 6px;
+            color: $MainColor;
+            font-size: 30px;
+            line-height: 36px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 17px;
+            color: #9F9F9F;
+        }
+    }
+
+    &__box {
+        margin: 48px 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &_item {
+            @extend %catRadiUS;
+            background-color: #F8F8F8;
+            margin-bottom: 30px;
+            width: 360px;
+            display: block;
+            text-decoration: none;
+
+            &>img {
+                @extend %catRadiUS;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 10px #ccc, 0px 0px 10px #ccc;
+                transition: 0.2s;
+            }
+
+            &_description {
+                color: initial;
+                padding: 25px 16.50px 28px 20px;
+                @extend %font;
+                font-weight: 400;
+            }
+
+            &_h {
+                color: #222222;
+                line-height: 16px;
+                font-size: 13px;
+                line-height: 16px;
+            }
+
+            &_text {
+                padding: 13px 0 18px;
+                font-size: 14px;
+                color: #5D5D5D;
+                font-weight: 300;
+                line-height: 17px;
+            }
+
+            &_price {
+                font-size: 16px;
+                line-height: 19px;
+                color: $MainPink;
+            }
+        }
+    }
+
+    &_bnt {
+        width: 212px;
+        display: block;
+        padding: 15px 39px;
+        margin: 0 auto;
+        border: 1px solid #FF6A6A;
+        box-sizing: border-box;
+        background-color: inherit;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #F26376;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #FF6A6A;
+            color: $TextWhite;
+            transition: 0.3s;
+        }
+    }
+}
+
+.advantages {
+    margin-top: 95px;
     padding: 103px 0;
     background-color: $MainColor;
-    @include font;
+    @extend %font;
 
     &__box {
         display: flex;
@@ -257,14 +353,14 @@ $TextWhite: #FBFBFB;
     }
 }
 
-.desc__item {
+.advant__item {
     &>img {
         width: 48px;
         height: 48px;
     }
 }
 
-.desc__item_h {
+.advant__item_h {
     padding: 19px 0 16px;
     font-weight: 400;
     font-size: 19.96px;
@@ -272,7 +368,7 @@ $TextWhite: #FBFBFB;
     color: $TextWhite;
 }
 
-.desc__item_text {
+.advant__item_text {
     font-weight: 300;
     font-size: 13.972px;
     line-height: 17px;
@@ -281,7 +377,7 @@ $TextWhite: #FBFBFB;
 
 $Padding-top-info__bottom: 97px;
 
-.info__bottom {
+.feedback {
     padding: $Padding-top-info__bottom 0 155px;
     background-image: url(../image/beach.jpg);
     background-repeat: no-repeat;
@@ -295,7 +391,7 @@ $Padding-top-info__bottom: 97px;
 }
 
 .author {
-    @include font();
+    @extend %font;
     text-align: center;
 }
 
@@ -316,7 +412,7 @@ $Padding-top-info__bottom: 97px;
 .subscribe {
     margin-top: 150px - $Padding-top-info__bottom;
     width: 356px;
-    @include font();
+    @extend %font;
     color: $MainColor;
     line-height: 167.2%;
     text-align: center;
@@ -333,7 +429,7 @@ $Padding-top-info__bottom: 97px;
     }
 
     &-box {
-        @include font();
+        @extend %font;
         height: 49px;
         display: flex;
         line-height: 17px;
@@ -395,8 +491,8 @@ $Padding-top-info__bottom: 97px;
         align-items: flex-end;
     }
 
-    &_text {
-        @include font();
+    &_copyright {
+        @extend %font;
         color: $TextWhite;
     }
 }

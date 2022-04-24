@@ -19,18 +19,18 @@
 <body>
     <div class="wrapper">
         <div class="content">
-            <nav class="nav__main">
-                <div class="nav__main__box wrap">
+            <header class="nav__main">
+                <nav class="nav__main__box wrap">
                     <ul class="nav__main__box__left">
                         <li><a href="index.html"><img src="image/nav_main_logo.svg" alt="logo"></a></li>
                         <li> <a href="#"><img src="image/nav_search.svg" alt="search"></a></li>
                     </ul>
                     <ul class="nav__main__box__right">
-                        <li class="nav__menu"><a href="#"><img src="image/hamb_menu.svg" alt="menu"></a>
-                            <div class="nav__menu__burg">
+                        <li class="nav__menu"><a href="#"><img src="image/icon_hamb_menu.svg" alt="menu"></a>
+                            <nav class="nav__menu__burg">
                                 <a href="#"><img src="image/crest.svg" alt="crest"></a>
                                 <h1 class="burg_mh">MENU</h1>
-                                <section>
+                                <nav>
                                     <h2 class="burg_h">MAN</h2>
                                     <ol class="burg__li">
                                         <li><a href="#">Accessories</a></li>
@@ -38,8 +38,8 @@
                                         <li><a href="#">Polos</a></li>
                                         <li><a href="#">T-Shirts</a></li>
                                     </ol>
-                                </section>
-                                <section>
+                                </nav>
+                                <nav>
                                     <h2 class="burg_h">WOMAN</h2>
                                     <ol class="burg__li">
                                         <li><a href="#">Accessories</a></li>
@@ -48,8 +48,8 @@
                                         <li><a href="#">T-Shirts</a></li>
                                         <li><a href="#">Shirts</a></li>
                                     </ol>
-                                </section>
-                                <section>
+                                </nav>
+                                <nav>
                                     <h2 class="burg_h">KIDS</h2>
                                     <ol class="burg__li">
                                         <li><a href="#">Accessories</a></li>
@@ -59,27 +59,27 @@
                                         <li><a href="#">Shirts</a></li>
                                         <li><a href="#">Bags</a></li>
                                     </ol>
-                                </section>
-                            </div>
+                                </nav>
+                            </nav>
                         </li>
-                        <li><a href="#"><img src="image/registraction.svg" alt="registraction"></a></li>
-                        <li><a href="#"><img src="image/cart.svg" alt="cart"></a></li>
+                        <li><a href="#"><img src="image/icon_registraction.svg" alt="registraction"></a></li>
+                        <li><a href="#"><img src="image/icon_cart.svg" alt="cart"></a></li>
                     </ul>
-                </div>
-            </nav>
-            <header class="banner">
+                </nav>
+            </header>
+            <section class="banner">
                 <div class="banner__box wrap">
                     <img src="image/header_man.png" alt="man">
                     <section class="banner__box__slogan">
                         <div class="banner__box__slogan-elem"></div>
-                        <div class="banner__box__slogan_text">
+                        <section class="banner__box__slogan_text">
                             <h1 class="THE-BRAND">THE BRAND</h1>
                             <span class="OF-LUXERIOUS-FASHION">OF&nbsp;LUXERIOUS <span
                                     class="FASHION">FASHION</span></span>
-                        </div>
+                        </section>
                     </section>
                 </div>
-            </header>
+            </section>
             <section class="offers wrap">
                 <a href="#" class="offers__block">
                     <img src="image/offers_woman.jpg" alt="woman">
@@ -110,36 +110,58 @@
                     </div>
                 </a>
             </section>
-            <section class="description">
-                <div class="description__box wrap">
-                    <article class="desc__item">
+            <section class="products wrap">
+                <section class="products__description">
+                    <h2 class="products__description__h">Fetured Items</h2>
+                    <p class="products__description__text">Shop for items based on what we featured in this week</p>
+                </section>
+                <div class="products__box">
+                    <a class="products__box_item" href="#">
+                        <img src="image/product_irem-1.png" alt="product">
+                        <div class="products__box_item_description">
+                            <h3 class="products__box_item_h">ELLERY X M'O CAPSULE</h3>
+                            <p class="products__box_item_text">Known for her sculptural takes on traditional
+                                tailoring,
+                                Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+                            <p class="products__box_item_price">$52.00</p>
+                        </div>
+                    </a>
+
+                </div>
+                <button class="products_bnt">
+                    <p>Browse All Product</p>
+                </button>
+            </section>
+            <section class="advantages">
+                <div class="advantages__box wrap">
+                    <article class="advant__item">
                         <img src="image/car-description.svg" alt="car">
-                        <h3 class="desc__item_h">Free Delivery</h3>
-                        <p class="desc__item_text">Worldwide delivery on all. Authorit tively morph next-generation
+                        <h3 class="advant__item_h">Free Delivery</h3>
+                        <p class="advant__item_text">Worldwide delivery on all. Authorit tively morph next-generation
                             innov
                             tion
                             with extensive models.</p>
                     </article>
-                    <article class="desc__item">
+                    <article class="advant__item">
                         <img src="image/prosent-description.svg" alt="car">
-                        <h3 class="desc__item_h">Free Delivery</h3>
-                        <p class="desc__item_text">Worldwide delivery on all. Authorit tively morph next-generation
+                        <h3 class="advant__item_h">Free Delivery</h3>
+                        <p class="advant__item_text">Worldwide delivery on all. Authorit tively morph next-generation
                             innov
                             tion
                             with extensive models.</p>
                     </article>
-                    <article class="desc__item">
+                    <article class="advant__item">
                         <img src="image/king-description.svg" alt="car">
-                        <h3 class="desc__item_h">Free Delivery</h3>
-                        <p class="desc__item_text">Worldwide delivery on all. Authorit tively morph next-generation
+                        <h3 class="advant__item_h">Free Delivery</h3>
+                        <p class="advant__item_text">Worldwide delivery on all. Authorit tively morph next-generation
                             innov
                             tion
                             with extensive models.</p>
                     </article>
                 </div>
             </section>
-            <section class="info__bottom">
-                <div class="info__bottom-box wrap">
+            <section class="feedback">
+                <div class="feedback-box wrap">
                     <figure class="author">
                         <img src="image/author.png" alt="author">
                         <q class="author_text">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, <em>a pulvinar
@@ -159,7 +181,7 @@
         </div>
         <footer class="footer">
             <div class="footer-box wrap">
-                <p class="footer_text">&copy;&nbsp;2022 Brand All Rights Reserved.</p>
+                <p class="footer_copyright">&copy;&nbsp;2022 Brand All Rights Reserved.</p>
                 <div class="media">
                     <a href="https://www.facebook.com" class="media_icon" target="_blank"><img
                             src="image/icon-facebook.svg" alt="facebook"></a>
