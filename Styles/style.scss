@@ -9,7 +9,9 @@
 $MainColor: #222224;
 $MainPink :#F16D7F;
 $TextWhite: #FBFBFB;
-;
+//REGISTRATION, CATALOG//
+$Header-Pink: #F8F3F4;
+//REGISTRATION, CATALOG//
 
 html,
 body {
@@ -97,6 +99,10 @@ body {
         }
 
     }
+
+    &_reg-icon:hover svg {
+        fill: $MainPink;
+    }
 }
 
 .nav__menu {
@@ -115,6 +121,7 @@ body {
         display: none;
         width: 232px;
         position: absolute;
+        z-index: 1;
         top: 38px;
         left: -52px;
         padding: (35px - 12px) 34px;
@@ -188,6 +195,12 @@ body {
 .banner {
     height: 764px;
     background-color: #F1E4E6;
+    //FIXME: Add video
+    // &__video {
+    //     position: fixed;
+    //     z-index: -1;
+    //     height: 100%;
+    // }
 
     &__box {
         height: inherit;
@@ -310,11 +323,8 @@ $Quantity-offers__block: 4;
             background-color: #F8F8F8;
             margin-bottom: 30px;
             width: 360px;
-            display: block;
-            text-decoration: none;
 
             &:hover {
-                transform: scale(1.03);
                 box-shadow: 0px 0px 10px #ccc, 0px 0px 10px #ccc;
                 transition: 0.2s;
             }
@@ -336,7 +346,28 @@ $Quantity-offers__block: 4;
                 font-weight: 400;
             }
 
+            &_link {
+                text-decoration: none;
+            }
+
+            &:hover .products__box_item_h {
+                padding: 0 5px;
+                box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 1px rgb(255, 255, 255);
+                background-color: lighten($MainPink, 15);
+                transition: all 0.8s;
+            }
+
+            .products__box_item_h::after {
+                margin-left: 10px;
+                font-size: 17px;
+                content: "<<<";
+                color: $TextWhite;
+                @include font();
+            }
+
             &_h {
+                width: max-content;
+                border-radius: 3px;
                 color: #222222;
                 line-height: 16px;
                 font-size: 13px;
@@ -439,11 +470,8 @@ $Quantity-offers__block: 4;
     }
 }
 
-.advant__item {
-    &>img {
-        width: 48px;
-        height: 48px;
-    }
+.advant__item--img {
+    height: 40px;
 }
 
 .advant__item_h {
@@ -465,10 +493,11 @@ $Padding-top-info__bottom: 97px;
 
 .feedback {
     padding: $Padding-top-info__bottom 0 155px;
+    background-color: #F4F4F4;
     background-image: url(../image/beach.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: left;
+    background-position: left bottom;
 
     &-box {
         display: flex;
@@ -528,8 +557,8 @@ $Padding-top-info__bottom: 97px;
             border-color: transparent;
 
             &:hover {
-                box-shadow: 5px 3px 3px #7c313bc4,
-                    4px -3px 3px #7c313bc4;
+                border-radius: 2px 20px 20px 2px;
+                box-shadow: 5px 3px 3px #7c313bc4, 4px -3px 3px #7c313bc4;
                 transition: 0.2s;
                 transform: scale(1.05);
             }
@@ -587,13 +616,15 @@ $Padding-top-info__bottom: 97px;
     display: flex;
 
     &_icon {
-        width: 30px;
-        height: 30px;
+        width: 32px;
+        height: 32px;
         background-color: $TextWhite;
         margin-left: 7.3px;
         display: flex;
         justify-content: center;
         align-items: center;
+        text-decoration: none;
+        border-radius: 4px;
 
         &:hover {
             background-color: $MainPink;
@@ -607,6 +638,44 @@ $Padding-top-info__bottom: 97px;
         }
     }
 }
+
+//REGISTRATION//
+
+.breadcrumb {
+
+    &_bg {
+        padding: 60px 0;
+        background-color: $Header-Pink;
+    }
+
+    &__h {
+        @include font();
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: $MainPink;
+    }
+
+}
+
+.wrap__reg {
+    padding: 64px 0 96px;
+    display: flex;
+
+    &_feedback {}
+
+    &_advan {
+        &__h {}
+
+        &__text {}
+    }
+}
+
+//REGISTRATION//
+
+//PRODUCT//
+
+//PRODUCT//
 
 @media (max-width:1190px) {
     .wrap {
