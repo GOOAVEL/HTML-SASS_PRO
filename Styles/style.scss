@@ -3,20 +3,28 @@
     border-radius: 3px;
 }
 
-$MainColor: #222224;
-$MainPink :#F16D7F;
-
 @mixin font {
     font-family: Lato, sans-serif;
 }
 
-body {
-    outline: none;
+$MainColor: #222224;
+$MainPink :#F16D7F;
+$TextWhite: #FBFBFB;
+;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.container {
+.content {
+    flex-grow: 1;
+}
+
+.wrap {
+    max-width: 1140px;
     margin: 0 auto;
-    max-width: 1200px;
 }
 
 .nav__main {
@@ -126,8 +134,8 @@ body {
             text-decoration: none;
 
             &:hover {
-                border-radius: 10px;
                 color: $MainPink;
+                transition: 0.2s;
             }
         }
 
@@ -143,6 +151,7 @@ body {
     background-color: #F1E4E6;
 
     &__box {
+        height: inherit;
         display: flex;
         justify-content: space-between;
 
@@ -168,7 +177,7 @@ body {
                 width: 377px;
                 @include font;
                 color: #222222;
-                line-height: 30px;
+                line-height: 38px;
             }
         }
     }
@@ -181,7 +190,7 @@ body {
 }
 
 .OF-LUXERIOUS-FASHION {
-    font-weight: 500;
+    font-weight: 700;
     font-size: 32px;
 }
 
@@ -203,7 +212,6 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #000;
 
         &:last-child,
         &:nth-child(3) {
@@ -213,27 +221,201 @@ body {
         &>img {
             width: 100%;
             @extend %catRadiUS;
-            opacity: 0.5;
         }
 
         &_row {
             position: absolute;
             @include font;
             text-decoration: none;
-            line-height: 19px;
             text-align: center;
 
             &_text {
                 font-weight: 400;
                 font-size: 16px;
                 color: #FFFFFF;
+                line-height: 19px;
             }
 
             &_h {
-                font-weight: 900;
+                font-weight: 700;
                 font-size: 24px;
+                line-height: 29px;
                 color: $MainPink;
             }
+        }
+    }
+}
+
+.description {
+    padding: 103px 0;
+    background-color: $MainColor;
+    @include font;
+
+    &__box {
+        display: flex;
+        text-align: center;
+    }
+}
+
+.desc__item {
+    &>img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.desc__item_h {
+    padding: 19px 0 16px;
+    font-weight: 400;
+    font-size: 19.96px;
+    line-height: 24px;
+    color: $TextWhite;
+}
+
+.desc__item_text {
+    font-weight: 300;
+    font-size: 13.972px;
+    line-height: 17px;
+    color: $TextWhite;
+}
+
+$Padding-top-info__bottom: 97px;
+
+.info__bottom {
+    padding: $Padding-top-info__bottom 0 155px;
+    background-image: url(../image/beach.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+
+    &-box {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.author {
+    @include font();
+    text-align: center;
+}
+
+.author_text {
+    width: 360px;
+    padding-top: 30px;
+    display: block;
+    font-weight: 400px;
+    font-size: 20px;
+    line-height: 24px;
+    color: $MainColor;
+
+    &>em {
+        font-style: italic;
+    }
+}
+
+.subscribe {
+    margin-top: 150px - $Padding-top-info__bottom;
+    width: 356px;
+    @include font();
+    color: $MainColor;
+    line-height: 167.2%;
+    text-align: center;
+
+    &_h {
+        font-weight: 700;
+        font-size: 24px;
+    }
+
+    &_text {
+        margin-bottom: 32px;
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    &-box {
+        @include font();
+        height: 49px;
+        display: flex;
+        line-height: 17px;
+        font-weight: 400;
+
+        &>button {
+            cursor: pointer;
+            width: 100px;
+            background-color: $MainPink;
+            color: $TextWhite;
+            box-sizing: border-box;
+            border-radius: 0 20px 20px 0;
+            border-color: transparent;
+            text-align: center;
+
+            &:hover {
+                box-shadow: 5px 3px 3px #7c313bc4,
+                    4px -3px 3px #7c313bc4;
+                transition: 0.2s;
+                transform: scale(1.05);
+            }
+        }
+
+    }
+
+    &_input {
+        padding-left: 22px;
+        width: 256px;
+        background: #E1E1E1;
+        border-radius: 20px 0 0 20px;
+        font-size: 14px;
+        opacity: 0.7;
+        border-color: transparent;
+        outline: none;
+        box-sizing: border-box;
+
+        &:hover {
+            box-shadow: inset 6px 4px 3px rgb(134, 66, 66);
+            transition: 0.2s;
+        }
+
+        &:hover::placeholder {
+            color: transparent;
+            text-shadow: 5px 3px 1px #7c313bc4;
+            transition: 0.2s;
+        }
+    }
+
+
+}
+
+.footer {
+    padding: 30px 0;
+    background-color: $MainColor;
+
+    &-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &_text {
+        @include font();
+        color: $TextWhite;
+    }
+}
+
+.media {
+    display: flex;
+
+    &_icon {
+        width: 30px;
+        height: 30px;
+        background-color: $TextWhite;
+        margin-left: 7.3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            background-color: $MainPink;
+            transition: 0.3s;
         }
     }
 }
