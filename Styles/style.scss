@@ -1,10 +1,9 @@
-%catRadiUS {
-    //my style 
-    border-radius: 3px;
-}
-
 @mixin font {
     font-family: Lato, sans-serif;
+}
+
+%catRadiUS {
+    border-radius: 3px;
 }
 
 $MainColor: #222224;
@@ -12,13 +11,31 @@ $MainPink :#F16D7F;
 $TextWhite: #FBFBFB;
 ;
 
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+html,
+body {
+    height: 100%;
 }
 
-.content {
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+body {
+    outline: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
     flex-grow: 1;
 }
 
@@ -36,6 +53,7 @@ $TextWhite: #FBFBFB;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        box-sizing: border-box;
 
         &__left {
             display: flex;
@@ -44,6 +62,27 @@ $TextWhite: #FBFBFB;
                 margin-right: 41px;
                 display: flex;
                 align-items: flex-end;
+            }
+        }
+
+        &__search {
+
+            &_input {
+                @include font();
+                font-size: 18px;
+                visibility: hidden;
+                margin-left: 10px;
+                height: 70%;
+                border-radius: 5px;
+                background-color: transparent;
+                color: #d88c96;
+                border: 2px solid $MainPink;
+                outline: none;
+            }
+
+            &:hover &_input {
+                visibility: visible;
+                transition: 0.2s;
             }
         }
 
@@ -102,7 +141,7 @@ $TextWhite: #FBFBFB;
 }
 
 %option-burg-text {
-    @include font;
+    @include font();
     font-size: 14px;
     line-height: 17px;
 }
@@ -155,10 +194,6 @@ $TextWhite: #FBFBFB;
         display: flex;
         justify-content: space-between;
 
-        &>img {
-            margin-right: 20px; //Адаптивное прижатие (отступ)
-        }
-
         &__slogan {
             height: 92px;
             margin-top: 290px;
@@ -174,29 +209,26 @@ $TextWhite: #FBFBFB;
             }
 
             &_text {
-                width: 377px;
-                @include font;
+                @include font();
                 color: #222222;
                 line-height: 38px;
+                font-weight: 900;
+                font-size: 46px;
+
+                &--small {
+                    font-weight: 700;
+                    font-size: 32px;
+                }
+
+                &--pink {
+                    color: $MainPink;
+                }
             }
         }
     }
 }
 
-.THE-BRAND {
-    font-weight: 900;
-    font-size: 46px;
-    line-height: 58px;
-}
-
-.OF-LUXERIOUS-FASHION {
-    font-weight: 700;
-    font-size: 32px;
-}
-
-.FASHION {
-    color: $MainPink;
-}
+$Quantity-offers__block: 4;
 
 .offers {
     margin: 65px auto (96px - 30px);
@@ -207,11 +239,12 @@ $TextWhite: #FBFBFB;
         @extend %catRadiUS;
         position: relative;
         margin-right: 30px;
-        flex: 1 1 25%;
+        flex: 1 1 (100% / $Quantity-offers__block);
         margin-bottom: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #C4C4C4;
 
         &:last-child,
         &:nth-child(3) {
@@ -225,7 +258,7 @@ $TextWhite: #FBFBFB;
 
         &_row {
             position: absolute;
-            @include font;
+            @include font();
             text-decoration: none;
             text-align: center;
 
@@ -246,10 +279,159 @@ $TextWhite: #FBFBFB;
     }
 }
 
-.description {
+.products {
+    &__description {
+        @include font();
+        text-align: center;
+        font-weight: 400;
+
+        &__h {
+            margin-bottom: 6px;
+            color: $MainColor;
+            font-size: 30px;
+            line-height: 36px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 17px;
+            color: #9F9F9F;
+        }
+    }
+
+    &__box {
+        margin: 48px 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &_item {
+            @extend %catRadiUS;
+            background-color: #F8F8F8;
+            margin-bottom: 30px;
+            width: 360px;
+            display: block;
+            text-decoration: none;
+
+            &:hover {
+                transform: scale(1.03);
+                box-shadow: 0px 0px 10px #ccc, 0px 0px 10px #ccc;
+                transition: 0.2s;
+            }
+
+            &:hover .wrap-flex>img {
+                filter: brightness(0.5);
+                opacity: 0.5;
+                transition: 0.2s;
+            }
+
+            &:hover .wrap-flex_btn {
+                display: flex;
+            }
+
+            &_description {
+                color: initial;
+                padding: 25px 16.50px 28px 20px;
+                @include font();
+                font-weight: 400;
+            }
+
+            &_h {
+                color: #222222;
+                line-height: 16px;
+                font-size: 13px;
+                line-height: 16px;
+            }
+
+            &_text {
+                padding: 13px 0 18px;
+                font-size: 14px;
+                color: #5D5D5D;
+                font-weight: 300;
+                line-height: 17px;
+            }
+
+            &_price {
+                font-size: 16px;
+                line-height: 19px;
+                color: $MainPink;
+            }
+        }
+    }
+
+    &_bnt {
+        padding: 15px 39px;
+        margin: 0 auto;
+        width: 212px;
+        display: block;
+        outline: 1px solid #FF6A6A;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        box-sizing: border-box;
+        color: #F26376;
+        text-decoration: none;
+        @include font();
+
+        &:hover {
+            background-color: #FF6A6A;
+            color: $TextWhite;
+            transition: 0.3s;
+            box-shadow: 0 0 5px #b86464;
+            transform: scale(1.03);
+        }
+    }
+}
+
+.wrap-flex {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px 3px 0 0;
+    background-color: rgba(58, 56, 56, 0.86);
+
+    &>img {
+        border-radius: 3px 3px 0 0;
+    }
+
+    .wrap-flex_btn {
+        display: none;
+        position: absolute;
+        padding: 11.3px 13.5px;
+        border: 1px solid white;
+        background-color: initial;
+        justify-content: center;
+        cursor: pointer;
+        align-items: center;
+        box-sizing: border-box;
+        @include font();
+        margin-left: 11px;
+        font-size: 14px;
+        line-height: 17px;
+        color: #FFFFFF;
+
+        &:hover {
+            transform: scale(1.03);
+            box-shadow: inset 0 0 7px white;
+            transition: 0.2s;
+        }
+
+        &>img {
+            margin-right: 11px;
+            width: 26px;
+            height: 24px;
+        }
+    }
+
+}
+
+.advantages {
+    margin-top: 95px;
     padding: 103px 0;
     background-color: $MainColor;
-    @include font;
+    @include font();
 
     &__box {
         display: flex;
@@ -257,14 +439,14 @@ $TextWhite: #FBFBFB;
     }
 }
 
-.desc__item {
+.advant__item {
     &>img {
         width: 48px;
         height: 48px;
     }
 }
 
-.desc__item_h {
+.advant__item_h {
     padding: 19px 0 16px;
     font-weight: 400;
     font-size: 19.96px;
@@ -272,7 +454,7 @@ $TextWhite: #FBFBFB;
     color: $TextWhite;
 }
 
-.desc__item_text {
+.advant__item_text {
     font-weight: 300;
     font-size: 13.972px;
     line-height: 17px;
@@ -281,7 +463,7 @@ $TextWhite: #FBFBFB;
 
 $Padding-top-info__bottom: 97px;
 
-.info__bottom {
+.feedback {
     padding: $Padding-top-info__bottom 0 155px;
     background-image: url(../image/beach.jpg);
     background-repeat: no-repeat;
@@ -303,7 +485,7 @@ $Padding-top-info__bottom: 97px;
     width: 360px;
     padding-top: 30px;
     display: block;
-    font-weight: 400px;
+    font-weight: 400;
     font-size: 20px;
     line-height: 24px;
     color: $MainColor;
@@ -336,18 +518,14 @@ $Padding-top-info__bottom: 97px;
         @include font();
         height: 49px;
         display: flex;
-        line-height: 17px;
-        font-weight: 400;
 
         &>button {
             cursor: pointer;
             width: 100px;
             background-color: $MainPink;
             color: $TextWhite;
-            box-sizing: border-box;
             border-radius: 0 20px 20px 0;
             border-color: transparent;
-            text-align: center;
 
             &:hover {
                 box-shadow: 5px 3px 3px #7c313bc4,
@@ -366,13 +544,17 @@ $Padding-top-info__bottom: 97px;
         border-radius: 20px 0 0 20px;
         font-size: 14px;
         opacity: 0.7;
-        border-color: transparent;
         outline: none;
+        border-color: transparent;
         box-sizing: border-box;
 
         &:hover {
             box-shadow: inset 6px 4px 3px rgb(134, 66, 66);
             transition: 0.2s;
+        }
+
+        &::placeholder {
+            @include font();
         }
 
         &:hover::placeholder {
@@ -395,7 +577,7 @@ $Padding-top-info__bottom: 97px;
         align-items: flex-end;
     }
 
-    &_text {
+    &_copyright {
         @include font();
         color: $TextWhite;
     }
@@ -415,7 +597,50 @@ $Padding-top-info__bottom: 97px;
 
         &:hover {
             background-color: $MainPink;
-            transition: 0.3s;
+            fill: #E1E1E1;
+            transition: all 0.3s;
         }
+
+        &:hover>svg {
+            fill: white;
+            transition: all 0.3s;
+        }
+    }
+}
+
+@media (max-width:1190px) {
+    .wrap {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+}
+
+@media (max-width:1000px) {
+
+    .banner {
+        height: 367px;
+
+        &__box_img {
+            margin-left: 78px;
+        }
+
+        &__box__slogan {
+            margin-top: 146px;
+            margin-right: 10px;
+        }
+
+        &__box__slogan_text {
+            font-size: 44px;
+            line-height: 32px;
+
+            &--small {
+                font-size: 24px;
+                line-height: 29px;
+            }
+        }
+    }
+
+    .offers {
+        margin: 20px auto (154px - 30px);
     }
 }
