@@ -1,4 +1,4 @@
-.nav__menu__burg, .offers__block, .offers__block > img, .products__box_item {
+.nav__menu__burg, .offers__block, .offers__block > img, .products__box_item, .wrap__reg_btn {
   border-radius: 3px;
 }
 
@@ -760,6 +760,120 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.wrap__reg_feedback {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 360px;
+  font-family: Lato, sans-serif;
+}
+
+.wrap__reg_heading {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 19px;
+  color: #222222;
+}
+
+.wrap__reg_input {
+  outline: none;
+  border: 1px solid #A4A4A4;
+  display: block;
+  padding: 16px;
+  width: 100%;
+  margin-top: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrap__reg_input::-webkit-input-placeholder {
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #B1B1B1;
+}
+
+.wrap__reg_input:-ms-input-placeholder {
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #B1B1B1;
+}
+
+.wrap__reg_input::-ms-input-placeholder {
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #B1B1B1;
+}
+
+.wrap__reg_input::placeholder {
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  color: #B1B1B1;
+}
+
+.wrap__reg_text {
+  margin-top: 15px;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  color: #B1B1B1;
+}
+
+.wrap__reg_btn {
+  margin-top: 39px;
+  padding: 16px 29px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FFFFFF;
+  border: none;
+  background-color: #F16D7F;
+  cursor: pointer;
+}
+
+.wrap__reg_btn:hover {
+  background-color: #f38493;
+}
+
+.wrap__reg_advant {
+  margin-left: 128px;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.wrap__reg_advant_text {
+  margin: 22px 0 21px;
+}
+
+.wrap__reg_advant_list {
+  margin-bottom: 16px;
+}
+
+.wrap__reg_advant_list::before {
+  content: url(../image/check_mark.svg);
+  margin-right: 23px;
+}
+
+.feedback__gender {
+  margin: 31px 0 33px;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
+  line-height: 13px;
+  color: #000000;
+}
+
+.radio_margin_right {
+  margin-right: 20px;
+}
+
+.fa-solid {
+  margin-left: 20px;
 }
 
 @media (max-width: 1190px) {

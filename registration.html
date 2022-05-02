@@ -14,6 +14,7 @@
     <link rel="shortcut icon" href="image/nav_main_logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="Styles/reset.css">
     <link rel="stylesheet" href="Styles/style.css">
+    <script src="https://kit.fontawesome.com/f837936c1a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -83,25 +84,40 @@
         </header>
         <main>
             <section class="wrap wrap__reg">
-                <form class="wrap__reg_feedback" action="">
+                <form class="wrap__reg_feedback" action="#">
                     <fieldset>
-                        <legend>Your Name</legend>
-                        <!-- <input name="first_name" type="text" required>
-                    <input name="last_name" type="text" required>
-                    <input id="male" type="radio" name="gender" required>
-                    <label for="male">Male</label>
-                    <input id="female" type="radio" name="gender" required>
-                    <label for="female">Female</label> -->
+                        <legend class="wrap__reg_heading">Your Name</legend>
+                        <input class="wrap__reg_input" name="first_name" type="text" required placeholder="First Name">
+                        <input class="wrap__reg_input" name="last_name" type="text" required placeholder="Last Name">
+                        <div class="feedback__gender">
+                            <input id="male" type="radio" name="gender" required checked>
+                            <label class="radio_margin_right" for="male">Male</label>
+                            <input id="female" type="radio" name="gender" required>
+                            <label class="radio_margin_right" for="female">Female</label>
+                            <input id="Other" type="radio" name="gender" required>
+                            <label for="Other">Other</label>
+                        </div>
                     </fieldset>
-                    <!-- <fieldset>
-                        <legend>Login details</legend>
-                        <input type="email" required name="email">
-                        <input type="password" required name="password">
-                    </fieldset> -->
+                    <fieldset>
+                        <legend class="wrap__reg_heading">Login details</legend>
+                        <input class="wrap__reg_input" type="email" required name="email" placeholder="Email">
+                        <input class="wrap__reg_input" type="password" required name="password" placeholder="Password">
+                    </fieldset>
+                    <p class="wrap__reg_text">Please use 8 or more characters, with at least 1 number and a mixture of
+                        uppercase and lowercase letters</p>
+                    <button class="wrap__reg_btn" type="submit">JOIN NOW<i class="fa-solid fa-arrow-right"></i></button>
                 </form>
-                <section class="wrap__reg_advan">
-                    <h2 class="wrap__reg_advan_h"></h2>
-                    <p class="wrap__reg_advant_"></p>
+                <section class="wrap__reg_advant">
+                    <h2 class="wrap__reg_advant_h">LOYALTY HAS ITS PERKS</h2>
+                    <p class="wrap__reg_advant_text">Get in on the loyalty program where you can earn points and unlock
+                        serious perks. Starting with these as soon as you join:</p>
+                    <ul>
+                        <li class="wrap__reg_advant_list">15% off welcome offer</li>
+                        <li class="wrap__reg_advant_list">Free shipping, returns and exchanges on all orders</li>
+                        <li class="wrap__reg_advant_list">$10 off a purchase on your birthday</li>
+                        <li class="wrap__reg_advant_list">Early access to products</li>
+                        <li class="wrap__reg_advant_list">Exclusive offers & rewards</li>
+                    </ul>
                 </section>
             </section>
         </main>

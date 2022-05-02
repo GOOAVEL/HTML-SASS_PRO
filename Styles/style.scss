@@ -662,13 +662,100 @@ $Padding-top-info__bottom: 97px;
     padding: 64px 0 96px;
     display: flex;
 
-    &_feedback {}
+    &_feedback {
+        flex-shrink: 0;
+        width: 360px;
+        @include font();
+    }
 
-    &_advan {
+    &_heading {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 19px;
+        color: #222222;
+    }
+
+    &_input {
+        outline: none;
+        border: 1px solid #A4A4A4;
+        display: block;
+        padding: 16px;
+        width: 100%;
+        margin-top: 20px;
+        box-sizing: border-box;
+
+        &::placeholder {
+            @include font();
+            font-weight: 300;
+            font-size: 14px;
+            color: #B1B1B1;
+        }
+    }
+
+    &_text {
+        margin-top: 15px;
+        @include font();
+        font-weight: 300;
+        font-size: 13px;
+        color: #B1B1B1;
+    }
+
+    &_btn {
+        @extend %catRadiUS;
+        margin-top: 39px;
+        padding: 16px 29px;
+        font-weight: 400;
+        font-size: 14px;
+        color: #FFFFFF;
+        border: none;
+        background-color: $MainPink;
+        cursor: pointer;
+
+        &:hover {
+            background-color: lighten($MainPink, 5);
+        }
+    }
+
+    &_advant {
+        margin-left: 128px;
+        @include font();
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+
         &__h {}
 
-        &__text {}
+        &_text {
+            margin: 22px 0 21px;
+        }
+
+        &_list {
+            margin-bottom: 16px;
+
+            &::before {
+                content: url(../image/check_mark.svg);
+                margin-right: 23px;
+            }
+        }
     }
+
+}
+
+.feedback__gender {
+    margin: 31px 0 33px;
+    @include font();
+    font-weight: 300;
+    line-height: 13px;
+    color: #000000;
+}
+
+.radio_margin_right {
+    margin-right: 20px;
+}
+
+.fa-solid {
+    margin-left: 20px;
 }
 
 //REGISTRATION//
