@@ -125,7 +125,9 @@ body {
     }
 }
 
+//FIXME:
 .menu__burg {
+    display: none;
     height: 764px;
     width: 232px;
     position: fixed;
@@ -137,6 +139,11 @@ body {
     background: #FFFFFF;
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
     border-radius: 0 0 0 10px;
+
+    //FIXME:
+    &_visability {
+        display: block;
+    }
 
     &_exit {
         padding: 0;
@@ -164,10 +171,24 @@ body {
 }
 
 .burg_h {
+    width: min-content;
     margin-bottom: 12px;
     font-weight: 400;
     color: $MainPink;
     @extend %option-burg-text;
+    transition: all 0.5s;
+
+    &--link {
+        text-decoration: none;
+    }
+
+    &:hover {
+        padding-left: 5px;
+        padding-right: 5px;
+        border-left: 3px solid $MainPink;
+        border-right: 3px solid $MainPink;
+    }
+
 }
 
 .burg__li {
@@ -658,7 +679,7 @@ $Padding-top-info__bottom: 97px;
 
 //REGISTRATION//
 
-.breadcrumb {
+.second-header {
 
     &_bg {
         margin-top: 75px;
@@ -700,6 +721,8 @@ $Padding-top-info__bottom: 97px;
         display: block;
         padding: 16px;
         width: 100%;
+        opacity: 0.8;
+        @include font();
         margin-top: 20px;
         box-sizing: border-box;
 
@@ -773,6 +796,16 @@ $Padding-top-info__bottom: 97px;
     font-weight: 300;
     line-height: 13px;
     color: #000000;
+
+    input,
+    label {
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: all 0.2s;
+        }
+    }
 }
 
 .radio_margin_right {
@@ -786,8 +819,277 @@ $Padding-top-info__bottom: 97px;
 //REGISTRATION//
 
 //PRODUCT//
+.second-header_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breadcrumbs-list {
+    display: flex;
+}
+
+.breadcrumbs-item::before {
+    content: '/';
+    margin-left: 5px;
+}
+
+.breadcrumbs-item:first-child::before {
+    display: none;
+}
+
+.breadcrumbs-link {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #636363;
+    transition: 0.2s;
+}
+
+.breadcrumbs-link--current {
+    font-weight: 700;
+    color: #F16D7F;
+}
+
+.breadcrumbs-link[href]:hover {
+    text-decoration: underline;
+    color: #F16D7F;
+}
+
+.options {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 64px;
+    display: flex;
+    @include font();
+}
+
+.filter {
+    background-color: #fff;
+    position: absolute;
+    top: -13px;
+    z-index: 99;
+    padding: 13px 16px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+
+    &:hover {
+        width: 360px;
+        display: block;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    }
+
+    &:hover .sidebar {
+        display: block;
+        transition: all 0.6s; //Почему не работает !!!РРР!
+    }
+}
+
+.filter_text-main {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.3s;
+        color: #EF5B70;
+    }
+
+    &:hover>svg {
+        transition: all 0.3s;
+        fill: #EF5B70;
+    }
+
+    &>svg {
+        margin-left: 11px;
+    }
+}
+
+.sidebar {
+    display: none;
+    margin-bottom: 18px;
+    transition: all 2s;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__one {
+        margin-top: 16px;
+
+        &:active .sidebar__one__list {
+            display: block;
+        }
+
+        &_text {
+            color: $MainPink;
+            padding: 9px 11px;
+            border-left: 5px solid #EF5B70;
+            border-bottom: 1px solid #EBEBEB;
+            color: $MainPink;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            cursor: pointer;
+        }
+
+        &__list {
+            display: none;
+            margin-top: 24px;
+            padding-left: 11px;
+            font-size: 14px;
+            line-height: 17px;
+            color: #6F6E6E;
+        }
+
+        &_item {
+            margin-bottom: 11px;
+
+            &:hover {
+                cursor: pointer;
+                color: $MainPink;
+            }
+        }
+    }
+}
+
+.sort {
+    margin: auto;
+
+    &-list {
+        display: flex;
+    }
+
+    &-item {
+        position: relative;
+        display: flex;
+        padding-right: 20px;
+        align-items: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #6F6E6E;
+        cursor: pointer;
+
+        &::after {
+            display: inline-block;
+            content: url(../image/arrow-bottom.svg);
+            margin-left: 10px;
+        }
+    }
+}
+
+.sort-item_hover {
+    &:hover .sort-item_text {
+        color: $MainPink;
+    }
+
+    &:hover .select {
+        display: block;
+    }
+}
+
+.select {
+    display: none;
+    padding: 7px 9px;
+    box-sizing: border-box;
+    position: absolute;
+    left: -11px;
+    top: 23px;
+    background: #FFFFFF;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    z-index: 99;
+    width: 100%;
+    pointer-events: none;
+    @include font();
+
+    &_checkbox {
+        font-size: 14px;
+        line-height: 16px;
+        color: #6F6E6E;
+        display: block;
+        width: max-content;
+        margin-bottom: 6px;
+    }
+
+    &_checkbox,
+    input {
+        pointer-events: all;
+        cursor: pointer;
+    }
+}
+
+.poducts_margin {
+    margin: 0;
+}
+
+.wrap-flex_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #F7E4E2;
+    padding-top: 10px;
+    box-sizing: border-box;
+    height: 420px;
+}
+
+.products__box_item {
+    &:hover .wrap-flex_img {
+        filter: brightness(0.6);
+        opacity: 0.5;
+        transition: 0.3s;
+    }
+}
+
+.pagination {
+    margin-top: 28px;
+    padding: 15px 16px;
+    border: 1px solid #EBEBEB;
+    border-radius: 7px;
+}
+
+.pagination-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.pagination-link {
+    @include font();
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: none;
+
+    &_page {
+        color: #C4C4C4;
+
+        &:hover {
+            color: $MainPink;
+            font-weight: 500;
+        }
+    }
+
+    &--current {
+        pointer-events: none;
+        color: $MainPink;
+    }
+}
+
+.pagination-item:first-child::before {
+    cursor: pointer;
+    content: url(../image/pag_arrow-left.svg);
+}
+
+.pagination-item:last-child::before {
+    cursor: pointer;
+    content: url(../image/pag_arrow-right.svg);
+}
 
 //PRODUCT//
+
 @media (min-width: 1400px) {
     .banner__video {
         width: 100%;
