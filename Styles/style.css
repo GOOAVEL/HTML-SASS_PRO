@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -183,18 +184,13 @@ body {
   cursor: pointer;
 }
 
-.nav__menu:active + .menu__burg {
-  right: 0;
-}
-
 .menu__burg {
-  display: none;
   height: 764px;
   width: 232px;
   position: fixed;
   z-index: 999;
   top: 75px;
-  right: 0px;
+  right: -233px;
   padding: 37px 34px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -202,10 +198,8 @@ body {
   -webkit-box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
           box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
   border-radius: 0 0 0 10px;
-}
-
-.menu__burg_visability {
-  display: block;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
 }
 
 .menu__burg_exit {
@@ -217,6 +211,12 @@ body {
   cursor: pointer;
   top: 16px;
   right: 16px;
+}
+
+.active {
+  right: 0px;
+  -webkit-transition: all 0.6s ease-out 0s;
+  transition: all 0.6s ease-out 0s;
 }
 
 .burg_mh, .burg_h, .burg__li > li > a {
@@ -1316,9 +1316,6 @@ body {
 }
 
 @media (max-width: 1000px) {
-  .menu__burg {
-    display: none;
-  }
   .banner {
     height: 367px;
   }

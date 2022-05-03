@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
 @import 'reset';
 
 $MainColor: #222224;
@@ -119,31 +120,21 @@ body {
     border: 0;
     background-color: transparent;
     cursor: pointer;
-
-    &:active+.menu__burg {
-        right: 0;
-    }
 }
 
-//FIXME:
 .menu__burg {
-    display: none;
     height: 764px;
     width: 232px;
     position: fixed;
     z-index: 999;
     top: 75px;
-    right: 0px;
+    right: -233px;
     padding: 37px 34px;
     box-sizing: border-box;
     background: #FFFFFF;
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
     border-radius: 0 0 0 10px;
-
-    //FIXME:
-    &_visability {
-        display: block;
-    }
+    transition: all 0.8s;
 
     &_exit {
         padding: 0;
@@ -155,6 +146,11 @@ body {
         top: 16px;
         right: 16px;
     }
+}
+
+.active {
+    right: 0px;
+    transition: all 0.6s ease-out 0s;
 }
 
 %option-burg-text {
@@ -1109,11 +1105,6 @@ $Padding-top-info__bottom: 97px;
 }
 
 @media (max-width:1000px) {
-
-    //FIXME: JS!
-    .menu__burg {
-        display: none;
-    }
 
     .banner {
         height: 367px;
