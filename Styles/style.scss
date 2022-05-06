@@ -672,7 +672,7 @@ $Padding-top-info__bottom: 97px;
     }
 }
 
-//......................REGISTRATION......................//
+//......................REGISTRATION......................
 
 .second-header {
 
@@ -811,9 +811,11 @@ $Padding-top-info__bottom: 97px;
     margin-left: 20px;
 }
 
-//....................REGISTRATION...................//
+@media (max-width:1000px) {}
 
-//.....................PRODUCT...................//
+//////////////////////////////REGISTRATION//////////////////////////////
+
+//.....................CATALOG...................
 .second-header_wrap {
     display: flex;
     justify-content: space-between;
@@ -1103,7 +1105,151 @@ $Padding-top-info__bottom: 97px;
     content: url(../image/pag_arrow-right.svg);
 }
 
-//........................PRODUCT.........................//
+/////////////////////////CATALOG////////////////////////////////
+
+//........................PRODUCT.........................
+
+.product {
+    background: #F7F7F7;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &__card {
+        height: 777px;
+    }
+
+    &__img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    &__arrow {
+        border: 0;
+        padding: 0;
+        width: 47px;
+        height: 47px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        position: absolute;
+        background-color: lightgray;
+        cursor: pointer;
+
+        &>i {
+            font-size: 22px;
+        }
+
+        &:hover {
+            color: $MainPink;
+        }
+
+        &_left {
+            border-radius: 0 3px 3px 0;
+            left: 0;
+        }
+
+        &_right {
+            border-radius: 3px 0 0 3px;
+            right: -1px;
+        }
+    }
+}
+
+.info-product {
+    position: relative;
+    z-index: 1;
+    margin-top: -65px;
+    padding: 64.5px 250px;
+    box-sizing: border-box;
+    text-align: center;
+    @include font();
+    outline: 1px solid #e7e7e7;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &__collection-h {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: #F16D7F;
+
+        &::after {
+            content: "";
+            margin: 12px auto;
+            display: block;
+            background-color: $MainPink;
+            width: 63px;
+            height: 3px;
+        }
+    }
+
+    &__name {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color: #4D4D4D;
+    }
+
+    &__text {
+        margin-top: 48px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: #5E5E5E;
+    }
+
+    &__price {
+        margin-top: 32px;
+        color: $MainPink;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    &__rule {
+        margin: 64.5px 0;
+        height: 1px;
+        border: 0;
+        background-color: #EAEAEA;
+    }
+
+    &__select {
+        width: max-content;
+        margin: 0 auto;
+    }
+
+    &_btn {
+        //FIXME:  
+        margin: 48px auto 0;
+        padding: 13px 50px 9px 24px;
+        display: flex;
+        align-items: flex-start;
+        gap: 23px;
+        border: 1px solid #F26376;
+        box-sizing: border-box;
+        color: #F26376;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        @include font();
+        background-color: #fff;
+        cursor: pointer;
+
+        &:hover {
+            border-color: transparent;
+            box-shadow: 0 0 10px;
+            transition: all 0.3s;
+        }
+    }
+}
+
+.products__box_marg {
+    margin-top: 128px;
+    margin-bottom: 128px - 30px;
+}
+
+///////////////////////////////PRODUCT///////////////////////////
 
 @media (min-width: 1400px) {
     .banner__video {
@@ -1114,11 +1260,13 @@ $Padding-top-info__bottom: 97px;
 @media (max-width:1190px) {
     .wrap {
         max-width: 100%;
-        padding: 0 32px;
+        padding-left: 32px;
+        padding-right: 32px;
 
         &_small {
             max-width: 100%;
-            padding: 0 16px;
+            padding-left: 16px;
+            padding-right: 16px;
         }
     }
 }

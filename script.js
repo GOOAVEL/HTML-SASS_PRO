@@ -18,7 +18,7 @@ $(document).ready(function () {
         $('.filter-svg').toggleClass('color-svg');
     });
 
-    $('.sidebar__one_text').click(function (event) {
+    $('.sidebar__one_select').click(function (event) {
         $('.sidebar__one__list').toggleClass('active-two');
     });
 
