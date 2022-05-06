@@ -146,6 +146,26 @@ body {
         top: 16px;
         right: 16px;
     }
+
+    &_main-icon {
+        display: none;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+        row-gap: 10px;
+        justify-content: space-between;
+
+        & svg {
+            fill: #6F6E6E;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: $MainPink;
+        }
+    }
 }
 
 .active {
@@ -489,7 +509,6 @@ $Quantity-offers__block: 4;
     }
 }
 
-
 .advantages {
     margin-top: 95px;
     padding: 103px 0;
@@ -675,6 +694,9 @@ $Padding-top-info__bottom: 97px;
 //......................REGISTRATION......................
 
 .second-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &_bg {
         margin-top: 75px;
@@ -774,9 +796,11 @@ $Padding-top-info__bottom: 97px;
         }
 
         &_list {
-            margin-bottom: 16px;
+            display: flex;
+            margin-bottom: 24px;
 
             &::before {
+                display: block;
                 content: url(../image/check_mark.svg);
                 margin-right: 23px;
             }
@@ -811,16 +835,75 @@ $Padding-top-info__bottom: 97px;
     margin-left: 20px;
 }
 
-@media (max-width:1000px) {}
+@media (max-width:1000px) {
+    .wrap__reg {
+        &_advant {
+            margin-left: 22px;
+        }
+    }
+
+    .wrap__reg {
+        padding: 40px 0 96px;
+    }
+
+    .wrap__reg_heading {
+        font-size: 16px;
+    }
+
+    .wrap__reg_input {
+        height: 45px;
+    }
+
+    .feedback__gender {
+        font-size: 12px;
+        line-height: 13px;
+    }
+
+    .wrap__reg_advant_h,
+    .wrap__reg_advant_text,
+    .wrap__reg_advant_list {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+}
+
+@media (max-width:710px) {
+    .wrap__reg_feedback {
+        width: 300px;
+    }
+}
+
+@media (max-width:662px) {
+    .wrap__reg_feedback {
+        width: 270px;
+    }
+}
+
+@media (max-width:610px) {
+    .media-610px {
+        justify-content: center;
+    }
+
+    .wrap__reg {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .wrap__reg_feedback {
+        flex-shrink: 1;
+        width: 360px;
+    }
+
+    .wrap__reg_advant {
+        margin-left: 0;
+    }
+}
 
 //////////////////////////////REGISTRATION//////////////////////////////
 
 //.....................CATALOG...................
-.second-header_wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .breadcrumbs-list {
     display: flex;
@@ -1103,6 +1186,14 @@ $Padding-top-info__bottom: 97px;
 .pagination-item:last-child::before {
     cursor: pointer;
     content: url(../image/pag_arrow-right.svg);
+}
+
+@media (max-width:500px) {
+
+    .second-header {
+        flex-flow: wrap column;
+        gap: 32px;
+    }
 }
 
 /////////////////////////CATALOG////////////////////////////////
@@ -1397,8 +1488,12 @@ $Padding-top-info__bottom: 97px;
         display: none;
     }
 
-    .nav__main_reg-icon:nth-child(n+2) {
-        display: none;
+    .visnot-phone {
+        display: none !important;
+    }
+
+    .menu__burg_main-icon {
+        display: flex;
     }
 
     $Quantity-offers__block: 4;
@@ -1446,7 +1541,6 @@ $Padding-top-info__bottom: 97px;
         padding-bottom: 100px;
     }
 
-
 }
 
 @media (max-width: 515px) {
@@ -1475,6 +1569,19 @@ $Padding-top-info__bottom: 97px;
 
     .media {
         margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 425px) {
+    .menu__burg {
+        right: 100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.829);
+    }
+
+    .active {
+        right: 0px;
     }
 }
 
