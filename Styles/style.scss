@@ -150,7 +150,6 @@ body {
 
 .active {
     right: 0px;
-    transition: all 0.6s ease-out 0s;
 }
 
 %option-burg-text {
@@ -673,7 +672,7 @@ $Padding-top-info__bottom: 97px;
     }
 }
 
-//REGISTRATION//
+//......................REGISTRATION......................//
 
 .second-header {
 
@@ -812,9 +811,9 @@ $Padding-top-info__bottom: 97px;
     margin-left: 20px;
 }
 
-//REGISTRATION//
+//....................REGISTRATION...................//
 
-//PRODUCT//
+//.....................PRODUCT...................//
 .second-header_wrap {
     display: flex;
     justify-content: space-between;
@@ -869,17 +868,6 @@ $Padding-top-info__bottom: 97px;
     padding: 13px 16px;
     box-sizing: border-box;
     transition: all 0.3s;
-
-    &:hover {
-        width: 360px;
-        display: block;
-        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-    }
-
-    &:hover .sidebar {
-        display: block;
-        transition: all 0.6s; //Почему не работает !!!РРР!
-    }
 }
 
 .filter_text-main {
@@ -906,7 +894,7 @@ $Padding-top-info__bottom: 97px;
 .sidebar {
     display: none;
     margin-bottom: 18px;
-    transition: all 2s;
+    transition: all 0.4s;
 
     &:last-child {
         margin-bottom: 0;
@@ -914,10 +902,7 @@ $Padding-top-info__bottom: 97px;
 
     &__one {
         margin-top: 16px;
-
-        &:active .sidebar__one__list {
-            display: block;
-        }
+        transition: all 0.4s;
 
         &_text {
             color: $MainPink;
@@ -938,6 +923,7 @@ $Padding-top-info__bottom: 97px;
             font-size: 14px;
             line-height: 17px;
             color: #6F6E6E;
+            transition: all 0.4s;
         }
 
         &_item {
@@ -949,6 +935,22 @@ $Padding-top-info__bottom: 97px;
             }
         }
     }
+}
+
+.active-one {
+    width: 360px;
+    opacity: 1;
+    color: #EF5B70;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+}
+
+.active-two {
+    display: block;
+    transition: all 0.5s;
+}
+
+.color-svg {
+    fill: #EF5B70;
 }
 
 .sort {
@@ -981,10 +983,6 @@ $Padding-top-info__bottom: 97px;
     &:hover .sort-item_text {
         color: $MainPink;
     }
-
-    &:hover .select {
-        display: block;
-    }
 }
 
 .select {
@@ -1012,9 +1010,29 @@ $Padding-top-info__bottom: 97px;
 
     &_checkbox,
     input {
-        pointer-events: all;
+        pointer-events: auto;
         cursor: pointer;
     }
+}
+
+.active-one {
+    width: 360px;
+    opacity: 1;
+    color: #EF5B70;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+}
+
+.active-two {
+    display: block;
+    transition: all 0.5s;
+}
+
+.color-svg {
+    fill: #EF5B70;
+}
+
+.color-after {
+    color: $MainPink;
 }
 
 .poducts_margin {
@@ -1040,6 +1058,7 @@ $Padding-top-info__bottom: 97px;
 }
 
 .pagination {
+    width: max-content;
     margin-top: 28px;
     padding: 15px 16px;
     border: 1px solid #EBEBEB;
@@ -1084,7 +1103,7 @@ $Padding-top-info__bottom: 97px;
     content: url(../image/pag_arrow-right.svg);
 }
 
-//PRODUCT//
+//........................PRODUCT.........................//
 
 @media (min-width: 1400px) {
     .banner__video {
