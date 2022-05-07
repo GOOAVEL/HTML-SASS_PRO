@@ -179,7 +179,6 @@ body {
 }
 
 .burg_mh {
-    clear: both;
     margin-bottom: 24px;
     font-weight: 700;
     @extend %option-burg-text;
@@ -911,7 +910,8 @@ $Padding-top-info__bottom: 97px;
 
 .breadcrumbs-item::before {
     content: '/';
-    margin-left: 5px;
+    margin-left: 7px;
+    margin-right: 3px;
 }
 
 .breadcrumbs-item:first-child::before {
@@ -919,6 +919,7 @@ $Padding-top-info__bottom: 97px;
 }
 
 .breadcrumbs-link {
+    @include font();
     text-decoration: none;
     font-weight: 300;
     font-size: 14px;
@@ -1577,7 +1578,45 @@ $Padding-top-info__bottom: 97px;
         right: 100%;
         width: 100%;
         height: 100vh;
-        background-color: rgba(255, 255, 255, 0.829);
+        background-color: rgba(255, 255, 255, 0.850);
+    }
+
+    .menu__burg_exit {
+        display: none;
+    }
+
+    .burg_mh {
+        text-align: center;
+    }
+
+    .menu__burg_nav {
+        padding: 2.5px 0;
+        margin-bottom: 20px;
+        box-shadow: 1px 3px 10px #e5a8bc;
+        border-radius: 5px;
+        background-color: rgba(255, 242, 246, 0.849);
+    }
+
+    .burg__li {
+        text-align: center;
+
+        &>li {
+            padding: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .burg_h {
+        margin: 0 auto 12px;
+    }
+
+    %option-burg-text {
+        @include font();
+        font-size: 17px;
+        line-height: 17px;
     }
 
     .active {

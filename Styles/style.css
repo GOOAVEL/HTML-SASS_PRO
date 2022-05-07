@@ -247,7 +247,6 @@ body {
 }
 
 .burg_mh {
-  clear: both;
   margin-bottom: 24px;
   font-weight: 700;
 }
@@ -1100,7 +1099,8 @@ body {
 
 .breadcrumbs-item::before {
   content: '/';
-  margin-left: 5px;
+  margin-left: 7px;
+  margin-right: 3px;
 }
 
 .breadcrumbs-item:first-child::before {
@@ -1108,6 +1108,7 @@ body {
 }
 
 .breadcrumbs-link {
+  font-family: Lato, sans-serif;
   text-decoration: none;
   font-weight: 300;
   font-size: 14px;
@@ -1809,7 +1810,38 @@ body {
     right: 100%;
     width: 100%;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.829);
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+  .menu__burg_exit {
+    display: none;
+  }
+  .burg_mh {
+    text-align: center;
+  }
+  .menu__burg_nav {
+    padding: 2.5px 0;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 1px 3px 10px #e5a8bc;
+            box-shadow: 1px 3px 10px #e5a8bc;
+    border-radius: 5px;
+    background-color: rgba(255, 242, 246, 0.849);
+  }
+  .burg__li {
+    text-align: center;
+  }
+  .burg__li > li {
+    padding: 0;
+  }
+  .burg__li > li:last-child {
+    margin-bottom: 0;
+  }
+  .burg_h {
+    margin: 0 auto 12px;
+  }
+  .burg_mh, .burg_h, .burg__li > li > a {
+    font-family: Lato, sans-serif;
+    font-size: 17px;
+    line-height: 17px;
   }
   .active {
     right: 0px;
