@@ -300,6 +300,11 @@ $Quantity-offers__block: 4;
         justify-content: center;
         align-items: center;
         background-color: #C4C4C4;
+        transition: all 0.6s;
+
+        &:hover {
+            transform: scale(1.02);
+        }
 
         &:last-child,
         &:nth-child(3) {
@@ -361,14 +366,18 @@ $Quantity-offers__block: 4;
         flex-wrap: wrap;
 
         &_item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
             @extend %catRadiUS;
             background-color: #F8F8F8;
             margin-bottom: 30px;
             width: 360px;
+            transition: all 0.5s;
 
             &:hover {
+                transform: scale(1.01);
                 box-shadow: 0px 0px 10px #ccc, 0px 0px 10px #ccc;
-                transition: 0.2s;
             }
 
             &:hover .wrap-flex>img {
@@ -393,36 +402,71 @@ $Quantity-offers__block: 4;
                 text-decoration: none;
             }
 
-            &:hover .products__box_item_h {
-                padding: 0 5px;
-                box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 1px rgb(255, 255, 255);
-                background-color: lighten($MainPink, 15);
-                transition: all 0.8s;
-            }
-
-            .products__box_item_h::after {
-                margin-left: 10px;
-                font-size: 17px;
-                content: "<<<";
-                color: $TextWhite;
-                @include font();
-            }
-
             &_h {
+                position: relative;
                 width: max-content;
                 border-radius: 3px;
                 color: #222222;
                 line-height: 16px;
                 font-size: 13px;
                 line-height: 16px;
+                transition: all 1s;
+
+                &::after {
+                    opacity: 0;
+                    position: absolute;
+                    right: 20px;
+                    font-size: 1px;
+                    content: ">>>>>";
+                    color: $TextWhite;
+                    @include font();
+                }
+
+                &::before {
+                    opacity: 0;
+                    position: absolute;
+                    left: 20px;
+                    font-size: 1px;
+                    content: "<<<<<";
+                    color: $TextWhite;
+                    @include font();
+                }
+            }
+
+            &:hover .products__box_item_h {
+                padding: 0 90px;
+                box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 1px rgb(255, 255, 255);
+                background-color: lighten($MainPink, 20);
+                transition: all 1s;
+            }
+
+            &:hover ::before {
+                font-size: 17px;
+                opacity: 1;
+                transition: all 2s;
+            }
+
+            &:hover ::after {
+                font-size: 17px;
+                opacity: 1;
+                transition: all 2s;
             }
 
             &_text {
-                padding: 13px 0 18px;
+                border-radius: 3px;
+                margin: 13px 0 18px;
                 font-size: 14px;
                 color: #5D5D5D;
                 font-weight: 300;
                 line-height: 17px;
+                transition: all 1s;
+            }
+
+            &:hover .products__box_item_text {
+                padding: 0 5px 0 0;
+                box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 1px rgb(255, 255, 255);
+                background-color: lighten($MainPink, 25);
+                transition: all 0.8s;
             }
 
             &_price {
@@ -458,39 +502,38 @@ $Quantity-offers__block: 4;
 }
 
 .wrap-flex {
-    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 3px 3px 0 0;
     background-color: rgba(58, 56, 56, 0.86);
 
     &>img {
         border-radius: 3px 3px 0 0;
+        transition: all 0.6s;
     }
 }
 
 .wrap-flex_btn {
-    display: flex;
-    opacity: 0;
     position: absolute;
+    top: 31%; //FIXME: Оцентрировать более оптимальным  способом.
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    opacity: 0;
     padding: 11.3px 13.5px;
     border: 1px solid white;
     background-color: initial;
-    justify-content: center;
     cursor: pointer;
-    align-items: center;
     box-sizing: border-box;
     @include font();
-    margin-left: 11px;
     font-size: 14px;
     line-height: 17px;
     color: #FFFFFF;
+    transition: all 0.3s;
 
     &:hover {
-        transform: scale(1.03);
         box-shadow: inset 0 0 7px white;
-        transition: 0.2s;
+        transition: all 0.2s;
     }
 
     &>img {
@@ -1383,7 +1426,7 @@ $Padding-top-info__bottom: 97px;
 
     .banner__video {
         margin: 0;
-        left: -950px;
+        left: -920px;
         top: -200px;
     }
 
