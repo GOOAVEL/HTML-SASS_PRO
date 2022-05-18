@@ -21,9 +21,4 @@ $(document).ready(function () {
     $('.sidebar__one_select').click(function (event) {
         $('.sidebar__one__list').toggleClass('active-two');
     });
-
-    $('.sort-item_hover').click(function (event) {
-        $('.select').toggleClass('active-two');
-        $('.sort-item_hover').toggleClass('color-after');
-    });
 });

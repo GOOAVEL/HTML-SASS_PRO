@@ -167,18 +167,35 @@
                 <div class="sort">
                     <ul class="sort-list">
                         <li class="sort-item">
-                            <span class="sort-item_text">TRENDING NOW</span>
+                            <details class="sort-item__select">
+                                <summary>TRENDING NOW</summary>
+                                <!-- <form action="#" class="select">
+
+                                </form> -->
+                            </details>
                         </li>
-                        <li class="sort-item sort-item_hover">
-                            <span class="sort-item_text">SIZE</span>
-                            <form action="#" class="select">
-                                <label class="select_checkbox"><input type="checkbox" name="xs">XS</label>
-                                <label class="select_checkbox"><input type="checkbox" name="s">S</label>
-                                <label class="select_checkbox"><input type="checkbox" name="m">M</label>
-                                <label class="select_checkbox"><input type="checkbox" name="l">L</label>
-                            </form>
+                        <li class="sort-item">
+                            <details class="sort-item__select">
+                                <summary>SIZE</summary>
+                                <form action="#" class="select">
+                                    <label class="select_checkbox"><input type="checkbox" name="xs">XS</label>
+                                    <label class="select_checkbox"><input type="checkbox" name="s">S</label>
+                                    <label class="select_checkbox"><input type="checkbox" name="m">M</label>
+                                    <label class="select_checkbox"><input type="checkbox" name="l">L</label>
+                                </form>
+                            </details>
                         </li>
-                        <li class="sort-item"><span class="sort-item_text">PRICE</span></li>
+                        <li class="sort-item">
+                            <details class="sort-item__select">
+                                <summary>PRICE</summary>
+                                <form action="#" class="select select_padd">
+                                    <label class="select__num"><input type="number" value="100"
+                                            class="select__box">MIN</label>
+                                    <label class="select__num"><input type="number" value="1000" class="select__num">MAX
+                                    </label>
+                                </form>
+                            </details>
+                        </li>
                     </ul>
                 </div>
             </div>
