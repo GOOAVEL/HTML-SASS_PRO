@@ -76,11 +76,11 @@ body {
                 color: #d88c96;
                 border: 2px solid $MainPink;
                 outline: none;
+                transition: 0.2s;
             }
 
             &:hover &_input {
                 visibility: visible;
-                transition: 0.2s;
             }
         }
 
@@ -102,9 +102,10 @@ body {
 }
 
 .icon-logo {
+    transition: all 1s ease;
+
     &:hover {
         transform: rotate(360deg);
-        transition: all 1s ease;
     }
 }
 
@@ -208,10 +209,10 @@ body {
             color: #6F6E6E;
             @extend %option-burg-text;
             text-decoration: none;
+            transition: 0.2s;
 
             &:hover {
                 color: $MainPink;
-                transition: 0.2s;
             }
         }
 
@@ -388,7 +389,6 @@ $Quantity-offers__block: 4;
 
             &:hover .wrap-flex_btn {
                 opacity: 1;
-                transition: all 0.8s;
             }
 
             &_description {
@@ -420,6 +420,7 @@ $Quantity-offers__block: 4;
                     content: ">>>>>";
                     color: $TextWhite;
                     @include font();
+                    transition: all 2s;
                 }
 
                 &::before {
@@ -430,6 +431,7 @@ $Quantity-offers__block: 4;
                     content: "<<<<<";
                     color: $TextWhite;
                     @include font();
+                    transition: all 2s;
                 }
             }
 
@@ -437,19 +439,16 @@ $Quantity-offers__block: 4;
                 padding: 0 90px;
                 box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 1px rgb(255, 255, 255);
                 background-color: lighten($MainPink, 20);
-                transition: all 1s;
             }
 
             &:hover ::before {
                 font-size: 17px;
                 opacity: 1;
-                transition: all 2s;
             }
 
             &:hover ::after {
                 font-size: 17px;
                 opacity: 1;
-                transition: all 2s;
             }
 
             &_text {
@@ -491,12 +490,14 @@ $Quantity-offers__block: 4;
         color: #F26376;
         text-decoration: none;
         @include font();
+        transition: background-color .3s, color .3s, border-radius 2s;
 
         &:hover {
             background-color: #FF6A6A;
             color: $TextWhite;
-            transition: 0.3s;
             transform: scale(1.02);
+            transition: transform .4s;
+            border-radius: 3px;
         }
     }
 }
@@ -534,13 +535,11 @@ $Quantity-offers__block: 4;
     &:hover {
         transform: scaleX(1.05);
         box-shadow: inset 0 0 7px white;
-        transition: all 0.2s;
     }
 
     &:active {
         border-radius: 15px;
         box-shadow: inset 0 0 10px $MainPink;
-        transition: all 0.2s;
     }
 
     &:active img {
@@ -653,11 +652,11 @@ $Padding-top-info__bottom: 97px;
             color: $TextWhite;
             border-radius: 0 20px 20px 0;
             border-color: transparent;
+            transition: all 0.2s;
 
             &:hover {
                 border-radius: 2px 20px 20px 2px;
                 box-shadow: 5px 3px 3px #7c313bc4, 4px -3px 3px #7c313bc4;
-                transition: 0.2s;
                 transform: scale(1.05);
             }
         }
@@ -674,20 +673,20 @@ $Padding-top-info__bottom: 97px;
         outline: none;
         border-color: transparent;
         box-sizing: border-box;
+        transition: all 0.2s;
 
         &:hover {
             box-shadow: inset 6px 4px 3px rgb(134, 66, 66);
-            transition: 0.2s;
         }
 
         &::placeholder {
             @include font();
+            transition: 0.2s;
         }
 
         &:hover::placeholder {
             color: transparent;
             text-shadow: 5px 3px 1px #7c313bc4;
-            transition: 0.2s;
         }
     }
 
@@ -723,16 +722,19 @@ $Padding-top-info__bottom: 97px;
         align-items: center;
         text-decoration: none;
         border-radius: 4px;
+        transition: all 0.3s;
+
+        &>svg {
+            transition: all 0.3s;
+        }
 
         &:hover {
             background-color: $MainPink;
             fill: #E1E1E1;
-            transition: all 0.3s;
         }
 
         &:hover>svg {
             fill: white;
-            transition: all 0.3s;
         }
     }
 }
@@ -788,6 +790,7 @@ $Padding-top-info__bottom: 97px;
         @include font();
         margin-top: 20px;
         box-sizing: border-box;
+        transition: all .1s;
 
         &::placeholder {
             @include font();
@@ -823,6 +826,7 @@ $Padding-top-info__bottom: 97px;
         border: none;
         background-color: $MainPink;
         cursor: pointer;
+        transition: all .2s;
 
         &:hover {
             background-color: lighten($MainPink, 5);
@@ -865,10 +869,10 @@ $Padding-top-info__bottom: 97px;
     input,
     label {
         cursor: pointer;
+        transition: all 0.2s;
 
         &:hover {
             transform: scale(1.2);
-            transition: all 0.2s;
         }
     }
 }
@@ -1008,19 +1012,19 @@ $Padding-top-info__bottom: 97px;
     font-size: 14px;
     line-height: 17px;
     cursor: pointer;
+    transition: all 0.2s;
 
     &:hover {
-        transition: all 0.3s;
         color: #EF5B70;
-    }
-
-    &:hover>svg {
-        transition: all 0.3s;
-        fill: #EF5B70;
     }
 
     &>svg {
         margin-left: 11px;
+        transition: all 0.3s;
+    }
+
+    &:hover>svg {
+        fill: #EF5B70;
     }
 }
 
@@ -1189,13 +1193,13 @@ $Padding-top-info__bottom: 97px;
     padding-top: 10px;
     box-sizing: border-box;
     height: 420px;
+    transition: 0.3s;
 }
 
 .products__box_item {
     &:hover .wrap-flex_img {
         filter: brightness(0.6);
         opacity: 0.5;
-        transition: 0.3s;
     }
 }
 
@@ -1384,11 +1388,11 @@ $Padding-top-info__bottom: 97px;
         @include font();
         background-color: #fff;
         cursor: pointer;
+        transition: all 0.3s;
 
         &:hover {
             border-color: transparent;
             box-shadow: 0 0 10px;
-            transition: all 0.3s;
         }
     }
 }
