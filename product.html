@@ -21,8 +21,13 @@
             <nav class="nav__main__box wrap">
                 <ul class="nav__main__box__left">
                     <li class="icon-logo"><a href="index.html"><img src="image/nav_main_logo.svg" alt="logo"></a></li>
-                    <li class="nav__main__box__search"> <a href="#"><img src="image/nav_search.svg" alt="search"></a>
-                        <input class="nav__main__box__search_input" type="search" size="18">
+                    <li class="nav__main__box__search">
+                        <a href="#">
+                            <img src="image/nav_search.svg" alt="search">
+                        </a>
+                        <form action="#">
+                            <input class="nav__main__box__search_input" type="search" placeholder="Search">
+                        </form>
                     </li>
                 </ul>
                 <ul class="nav__main__box__right">
@@ -44,7 +49,7 @@
                         </a>
                     </li>
                     <li class="nav__main_reg-icon visnot-phone">
-                        <a href="#">
+                        <a href="cart.html">
                             <svg width="32" height="29" viewbox="0 0 32 29" fill="#E8E8E8"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -54,7 +59,7 @@
                     </li>
                 </ul>
                 <article class="menu__burg">
-                    <button class="menu__burg_exit"><img src="image/crest.svg" alt="crest"></button>
+                    <button class="menu__burg_crest crest-exit"><img src="image/crest.svg" alt="crest"></button>
                     <h2 class="burg_mh">MENU</h2>
                     <ul class="menu__burg_main-icon">
                         <li class="nav__main_reg-icon">
@@ -78,7 +83,7 @@
                     </ul>
                     <nav class="menu__burg_nav">
                         <a href="catalog.html" class="burg_h--link">
-                            <h3 class="burg_h">MAN</h3>
+                            <h3 class="burg_h">MEN</h3>
                         </a>
                         <ol class="burg__li">
                             <li><a href="#">Accessories</a></li>
@@ -89,7 +94,7 @@
                     </nav>
                     <nav class="menu__burg_nav">
                         <a href=" #" class="burg_h--link">
-                            <h3 class="burg_h">WOMAN</h3>
+                            <h3 class="burg_h">WOMEN</h3>
                         </a>
                         <ol class="burg__li">
                             <li><a href="#">Accessories</a></li>
@@ -159,22 +164,36 @@
             <div class="info-product__select">
                 <ul class="sort-list">
                     <li class="sort-item">
-                        <span class="sort-item_text">CHOOSE COLOR</span>
-                        <form action="#" class="select">
-                            <!-- FIXME: -->
-                            <input type="color">
-                        </form>
+                        <details class="sort-item__select">
+                            <summary>CHOOSE COLOR</summary>
+                            <form action="#" class="select">
+                                <input type="color">
+                            </form>
+                        </details>
                     </li>
-                    <li class="sort-item sort-item_hover">
-                        <span class="sort-item_text">CHOOSE SIZE</span>
-                        <form action="#" class="select">
-                            <label class="select_checkbox"><input type="checkbox" name="xs">XS</label>
-                            <label class="select_checkbox"><input type="checkbox" name="s">S</label>
-                            <label class="select_checkbox"><input type="checkbox" name="m">M</label>
-                            <label class="select_checkbox"><input type="checkbox" name="l">L</label>
-                        </form>
+                    <li class="sort-item">
+                        <details class="sort-item__select">
+                            <summary>CHOOSE SIZE</summary>
+                            <form action="#" class="select">
+                                <label class="select_checkbox"><input type="checkbox" name="xs">XS</label>
+                                <label class="select_checkbox"><input type="checkbox" name="s">S</label>
+                                <label class="select_checkbox"><input type="checkbox" name="m">M</label>
+                                <label class="select_checkbox"><input type="checkbox" name="l">L</label>
+                            </form>
+                        </details>
                     </li>
-                    <li class="sort-item"><span class="sort-item_text">QUANTITY</span></li>
+                    <li class="sort-item">
+                        <details class="sort-item__select">
+                            <summary>QUANTITY</summary>
+                            <form action="#" class="select select_padd">
+                                <label class="select__num"><input type="number" value="100" min="10"
+                                        class="select__box">MIN</label>
+                                <label class="select__num"><input type="number" value="1000" min="100"
+                                        class="select__num">MAX
+                                </label>
+                            </form>
+                        </details>
+                    </li>
                 </ul>
             </div>
             <button class="info-product_btn">
