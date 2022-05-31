@@ -8,7 +8,7 @@ $(document).ready(function () {
         $('.nav__menu, .menu__burg').toggleClass('active');
     });
 
-    $('.menu__burg_exit').click(function (event) {
+    $('.crest-exit').click(function (event) {
         $('.menu__burg').toggleClass('active');
     });
 
@@ -22,8 +22,6 @@ $(document).ready(function () {
         $('.sidebar__one__list').toggleClass('active-two');
     });
 
-    $('.sort-item_hover').click(function (event) {
-        $('.select').toggleClass('active-two');
-        $('.sort-item_hover').toggleClass('color-after');
-    });
+    //Example fix
+
 });
